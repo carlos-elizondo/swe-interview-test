@@ -72,7 +72,6 @@ server  npm start
    │   ├── App/Page      # Main state & Map logic
    │   │   └── ProductList.jsx
    ├── package.json
-   ├── README.md
 ```
 
 ## ⚠️ Common Troubleshooting
