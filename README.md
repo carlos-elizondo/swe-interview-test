@@ -1,11 +1,60 @@
-# SWE INTERVIEW TEST 
-THIS IS TO TEST YOUR SKILLS TO MEET OUR APP DEVELOPMENT REQUIREMENTS
+# 🛒 Simple Card List Application
 
-1. Clone this repo to your local machine.
-2. Read `Assignment Requirements` carefully and follow it.
-4. Please commit your entire code to `your own Github repository` 
-5. On your repo, please add step-by-step instructions on how to launch (for both the Backend and Frontend) to the `README.md`
-6. Share your repo link with us via email.
+A full-stack application for managing product cards, featuring a React/MUI frontend and an Express.js backend.
 
-HAPPY CODING! </br>
-A Round Entertainment
+## 🚀 Getting Started
+
+To run this project, you will need to open **two separate terminals**: one for the backend and one for the frontend.
+
+### 1\. Backend Setup (Express)
+
+The backend serves the product data and handles the DELETE API logic.
+
+- **Path:** /backend (or your root folder)
+- **Port:** 5001
+
+Bash
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Navigate to the backend folder  cd backend  # Install dependencies  npm install  # Start the server  node server.js   `
+
+> **Note:** Ensure the backend is running on [http://localhost:5001](https://www.google.com/search?q=http://localhost:5001).
+
+### 2\. Frontend Setup (React)
+
+The frontend displays the product cards and communicates with the backend API.
+
+- **Path:** /frontend
+- **Port:** 3000
+
+Bash
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Navigate to the frontend folder  cd frontend  # Install dependencies  npm install  # Start the React development server  npm start   `
+
+> **Note:** The app will automatically open at [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000).
+
+## 🛠 Features & Requirements
+
+### Frontend
+
+- **Responsive Layout:** Uses Material UI (MUI) Container and Box with flex-wrap to ensure cards fit all screen sizes.
+- **Product Cards:** Displays images, pricing, and descriptions using a custom ProductCard component.
+- **Dynamic Deletion:** Implements onDelete logic that updates the UI immediately using React State (filter).
+
+### Backend
+
+- **CORS Enabled:** Configured to allow requests from the port 3000 frontend.
+
+- **RESTful API:** Provides a GET /api/products and DELETE /api/products/:id endpoint.
+- **State Management:** Uses an in-memory array with filter() to handle product removal.
+
+## 📂 Project Structure
+
+Plaintext
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   ├── backend/  │   ├── server.js        # Express server & API routes  │   └── package.json  ├── frontend/  │   ├── src/  │   │   ├── App.js       # Main state & Map logic  │   │   └── ProductCard.js # UI Component  │   └── package.json  └── README.md   `
+
+## ⚠️ Common Troubleshooting
+
+- **JSON Parse Error:** Ensure the **Backend** is running before clicking delete. If the backend is off, the frontend might receive an HTML 404 page instead of JSON.
+- **CORS Errors:** If the console shows a "Cross-Origin" error, ensure app.use(cors()) is included in your server.js.
+- **Port Mismatch:** This project expects the backend at port 5001. If your backend port changes, update the fetch URL in App.js.

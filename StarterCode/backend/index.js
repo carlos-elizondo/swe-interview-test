@@ -1,21 +1,64 @@
-const express = require('express');
-require('dotenv').config();
+const express = require("express");
+require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.use(express.json());
 
 //implement the CORS config
+const cors = require("cors");
+const corsOptions = {
+    origin: "http://localhost:3000",
+    methods: "GET,DELETE",
+};
+
+app.use(cors(corsOptions));
 
 //products array
 let products = [
-    { id: 1, name: 'Product 1', description: 'description 1', price: 100, imageUrl: '' },
-    { id: 2, name: 'Product 2', description: 'description 2', price: 200, imageUrl: '' },
-    { id: 3, name: 'Product 3', description: 'description 3', price: 300, imageUrl: '' },
-    { id: 4, name: 'Product 4', description: 'description 4', price: 150, imageUrl: '' },
-    { id: 5, name: 'Product 5', description: 'description 5', price: 500, imageUrl: '' },
-    { id: 6, name: 'Product 6', description: 'description 6', price: 50, imageUrl: '' },
+    {
+        id: 1,
+        name: "Product 1",
+        description: "description 1",
+        price: 100,
+        imageUrl: "",
+    },
+    {
+        id: 2,
+        name: "Product 2",
+        description: "description 2",
+        price: 200,
+        imageUrl: "",
+    },
+    {
+        id: 3,
+        name: "Product 3",
+        description: "description 3",
+        price: 300,
+        imageUrl: "",
+    },
+    {
+        id: 4,
+        name: "Product 4",
+        description: "description 4",
+        price: 150,
+        imageUrl: "",
+    },
+    {
+        id: 5,
+        name: "Product 5",
+        description: "description 5",
+        price: 500,
+        imageUrl: "",
+    },
+    {
+        id: 6,
+        name: "Product 6",
+        description: "description 6",
+        price: 50,
+        imageUrl: "",
+    },
 ];
 
 //function to generate a url for getting a random image from picsum
@@ -24,13 +67,25 @@ const fetchImageUrl = () => {
 };
 
 //implement the get api for getting products
-app.get('/api/products', (req, res) => {
-
+app.get("/api/products", (req, res) => {
+    res.status(200).json(products);
+    products = products.map((p) => ({
+        ...p,
+        imageUrl: fetchImageUrl(),
+    }));
 });
 
 //implement the delete api for deleting a product by Id
-app.delete('/api/products/:id', (req, res) => {
-    
+app.delete("/api/products/:id", (req, res) => {
+    const idToDelete = parseInt(req.params.id);
+
+    // Filter the array to remove the item with the matching ID
+    products = products.filter((p) => p.id !== idToDelete);
+
+    res.status(200).json({
+        message: `Product ${idToDelete} deleted`,
+        idToDelete: idToDelete,
+    });
 });
 
 app.listen(PORT, () => {
