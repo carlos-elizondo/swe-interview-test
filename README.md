@@ -38,8 +38,8 @@ The frontend displays the product cards and communicates with the backend API.
 cd frontend
 
 # Install dependencies
-
 npm install
+
 # Start the React development
 server  npm start
 ```
