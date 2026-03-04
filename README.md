@@ -73,10 +73,10 @@ server  npm start
    │   │   └── ProductList.jsx
    ├── package.json
    ├── README.md
+```
 
 ## ⚠️ Common Troubleshooting
 
 - **JSON Parse Error:** Ensure the **Backend** is running before clicking delete. If the backend is off, the frontend might receive an HTML 404 page instead of JSON.
 - **CORS Errors:** If the console shows a "Cross-Origin" error, ensure app.use(cors()) is included in your server.js.
 - **Port Mismatch:** This project expects the backend at port 5001. If your backend port changes, update the fetch URL in App.js.
-```
