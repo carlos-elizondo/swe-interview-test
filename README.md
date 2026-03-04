@@ -13,9 +13,15 @@ The backend serves the product data and handles the DELETE API logic.
 - **Path:** /backend (or your root folder)
 - **Port:** 5001
 
-Bash
+````bash
+# Navigate to the backend folder
+cd backend
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Navigate to the backend folder  cd backend  # Install dependencies  npm install  # Start the server  node server.js   `
+# Install dependencies
+npm install
+
+# Start the server  node
+server.js
 
 > **Note:** Ensure the backend is running on [http://localhost:5001](https://www.google.com/search?q=http://localhost:5001).
 
@@ -26,9 +32,15 @@ The frontend displays the product cards and communicates with the backend API.
 - **Path:** /frontend
 - **Port:** 3000
 
-Bash
+```bash
+# Navigate to the frontend folder
+cd frontend
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Navigate to the frontend folder  cd frontend  # Install dependencies  npm install  # Start the React development server  npm start   `
+# Install dependencies
+
+npm install
+# Start the React development
+server  npm start
 
 > **Note:** The app will automatically open at [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000).
 
@@ -49,12 +61,20 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 
 ## 📂 Project Structure
 
-Plaintext
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   ├── backend/  │   ├── server.js        # Express server & API routes  │   └── package.json  ├── frontend/  │   ├── src/  │   │   ├── App.js       # Main state & Map logic  │   │   └── ProductCard.js # UI Component  │   └── package.json  └── README.md   `
+```bash
+   ├── backend/
+   │   ├── server.js        # Express server & API routes
+   │   └── package.json
+   ├── frontend/  │
+   ├── src/  │
+   │   ├── App/Page      # Main state & Map logic
+   │   │   └── ProductList.jsx
+   ├── package.json
+   ├── README.md
 
 ## ⚠️ Common Troubleshooting
 
 - **JSON Parse Error:** Ensure the **Backend** is running before clicking delete. If the backend is off, the frontend might receive an HTML 404 page instead of JSON.
 - **CORS Errors:** If the console shows a "Cross-Origin" error, ensure app.use(cors()) is included in your server.js.
 - **Port Mismatch:** This project expects the backend at port 5001. If your backend port changes, update the fetch URL in App.js.
+````
