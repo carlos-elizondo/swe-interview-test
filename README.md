@@ -13,7 +13,7 @@ The backend serves the product data and handles the DELETE API logic.
 - **Path:** /backend (or your root folder)
 - **Port:** 5001
 
-````bash
+```bash
 # Navigate to the backend folder
 cd backend
 
@@ -22,6 +22,7 @@ npm install
 
 # Start the server  node
 server.js
+```
 
 > **Note:** Ensure the backend is running on [http://localhost:5001](https://www.google.com/search?q=http://localhost:5001).
 
@@ -41,6 +42,7 @@ cd frontend
 npm install
 # Start the React development
 server  npm start
+```
 
 > **Note:** The app will automatically open at [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000).
 
@@ -77,4 +79,4 @@ server  npm start
 - **JSON Parse Error:** Ensure the **Backend** is running before clicking delete. If the backend is off, the frontend might receive an HTML 404 page instead of JSON.
 - **CORS Errors:** If the console shows a "Cross-Origin" error, ensure app.use(cors()) is included in your server.js.
 - **Port Mismatch:** This project expects the backend at port 5001. If your backend port changes, update the fetch URL in App.js.
-````
+```
